@@ -9,7 +9,7 @@ public class Números_apuntes {
 	
 	
 	/* DECIMALES 
-	 * float=2^32 long= 2^64
+	 * float=2^32 Double= 2^64
 	 */
 	
 	double bruh = 7.7;
@@ -24,6 +24,8 @@ public class Números_apuntes {
 	System.out.println(brodel);
 	
 	System.out.println(brodel+bruh+numEntero);
+	
+	
 	
 	
 	
