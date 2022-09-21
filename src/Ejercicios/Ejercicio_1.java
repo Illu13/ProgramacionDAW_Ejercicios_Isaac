@@ -1,3 +1,4 @@
+package Ejercicios;
 import javax.swing.JOptionPane;
 
 public class Ejercicio_1 {
