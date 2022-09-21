@@ -4,7 +4,6 @@ import javax.swing.JOptionPane;
 public class Hola_Mundo {
 
 	public static void main(String[] args) {
-	System.out.println("UwU");
 	
 	String numero1;
 	String numero2;
@@ -14,9 +13,9 @@ public class Hola_Mundo {
 	numero1 = JOptionPane.showInputDialog("Escribe un número");
 	numero2 = JOptionPane.showInputDialog("Escribe otro número");
 	numero3 = JOptionPane.showInputDialog("Escribe un último número");
-	float num1 = Float.parseFloat(numero1);
-	float num2 = Float.parseFloat(numero2);
-	float num3 = Float.parseFloat(numero3);
+	int num1 = Integer.parseInt(numero1);
+	int num2 = Integer.parseInt(numero2);
+	int num3 = Integer.parseInt(numero3);
 	
 
 	

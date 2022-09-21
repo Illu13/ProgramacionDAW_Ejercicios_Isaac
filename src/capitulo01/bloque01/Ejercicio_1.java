@@ -1,5 +1,9 @@
-package Ejercicios;
+package capitulo01.bloque01;
 import javax.swing.JOptionPane;
+
+/*
+ * Realiza un programa que pida al usuario tres números: uno de tipo entero, otro de tipo flotante y otro de tipo doble. A continuación se tienen que mostrar en pantalla los tres números en una sola fila de la consola de salida.
+ */
 
 public class Ejercicio_1 {
 
