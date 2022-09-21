@@ -14,12 +14,14 @@ public class Hola_Mundo {
 	numero1 = JOptionPane.showInputDialog("Escribe un número");
 	numero2 = JOptionPane.showInputDialog("Escribe otro número");
 	numero3 = JOptionPane.showInputDialog("Escribe un último número");
-	int num1 = Integer.parseInt(numero1);
-	int num2 = Integer.parseInt(numero2);
-	int num3 = Integer.parseInt(numero3);
+	float num1 = Float.parseFloat(numero1);
+	float num2 = Float.parseFloat(numero2);
+	float num3 = Float.parseFloat(numero3);
+	
+
 	
 	
-	System.out.println((num1 + num2 + num3)/2);
+	System.out.println("La media aritmética de esos 3 números es: " + (num1 + num2 + num3)/3);
 	
 	}
 
