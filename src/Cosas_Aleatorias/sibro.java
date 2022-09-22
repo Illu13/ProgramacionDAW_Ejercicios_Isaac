@@ -14,11 +14,9 @@ public class sibro {
 		a = JOptionPane.showInputDialog("a");
 		b = JOptionPane.showInputDialog("b");
 		
-		int c = Integer.parseInt(a);
-		int d = Integer.parseInt(b);
 		
 		
-		System.out.println(c+d);
+		System.out.println(a.length() + b.length());
 
 	}
 
