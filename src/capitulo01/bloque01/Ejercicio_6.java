@@ -1,6 +1,7 @@
 package capitulo01.bloque01;
 import javax.swing.JOptionPane;
 
+
 public class Ejercicio_6 {
 	
 //	Realiza un ejercicio en Java para el cálculo de la cuota mensual de una hipóteca 

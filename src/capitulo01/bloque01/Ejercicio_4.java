@@ -14,11 +14,12 @@ public class Ejercicio_4 {
 		numero2 = JOptionPane.showInputDialog("Introduzca otro número");
 		numero3 = JOptionPane.showInputDialog("Introduzca un último número");
 		
-		int num1 = Integer.parseInt(numero1);
-		int num2 = Integer.parseInt(numero2);
-		int num3 = Integer.parseInt(numero3);
+		double num1 = Double.parseDouble(numero1);
+		double num2 = Double.parseDouble(numero2);
+		double num3 = Double.parseDouble(numero3);
+		double media = ((num1+num2+num3)/3);
 		
-		System.out.println("La media aritmética de los 3 números es: " + ((num1 + num2 + num3)/3));
+		System.out.println("La media aritmética de los 3 números es: " + media);
 		
 		
 		

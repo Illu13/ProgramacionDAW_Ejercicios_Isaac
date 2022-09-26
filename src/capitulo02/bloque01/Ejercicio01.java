@@ -1,6 +1,8 @@
 package capitulo02.bloque01;
 import javax.swing.JOptionPane;
 
+//Realiza un ejercicio que pida dos variables al usuario, tras lo cual, muestre en pantalla el número mayor de los dos introducidos
+
 
 public class Ejercicio01 {
 
