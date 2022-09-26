@@ -26,6 +26,10 @@ public class Número_String_apuntes {
 	
 	System.out.println(brodel+bruh+numEntero);
 	
+//	Math.pow(flotante, brodel); potencia.
+//raíces cuadradas	Math.sqrt(4);
+	
+	
 //El "+" suma o concatena.
 //El string es una cadena de caracteres, por lo que si declaramos una variable
 //string en la cual haya números, no serán números como tal, es una cadena de

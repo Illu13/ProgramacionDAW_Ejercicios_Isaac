@@ -1,4 +1,4 @@
-package Cosas_Aleatorias;
+package pruebas;
 import javax.swing.JOptionPane;
 
 public class Hola_Mundo {

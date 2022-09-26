@@ -9,16 +9,16 @@ public class Ejercicio_6 {
 		
 		
 		String euribor1;
-		euribor1 = JOptionPane.showInputDialog("¿Cuál es el euribor?");
-		float euribor = Float.parseFloat(euribor1);
-		String diferencial1;
-		diferencial1 = JOptionPane.showInputDialog("¿Cuál es el diferencial?"); 
+			euribor1 = JOptionPane.showInputDialog("¿Cuál es el euribor?");
+				float euribor = Float.parseFloat(euribor1);
+			String diferencial1;
+			diferencial1 = JOptionPane.showInputDialog("¿Cuál es el diferencial?"); 
 		float diferencial = Float.parseFloat(diferencial1);
-		String capital1;
-		capital1 = JOptionPane.showInputDialog("¿Cuál es el capital?");
+			String capital1;
+				capital1 = JOptionPane.showInputDialog("¿Cuál es el capital?");
 		float capital = Float.parseFloat(capital1);
-		String plazos1;
-		plazos1 = JOptionPane.showInputDialog("¿Cuál es el número de plazos mensuales?");
+			String plazos1;
+				plazos1 = JOptionPane.showInputDialog("¿Cuál es el número de plazos mensuales?");
 		int plazos = Integer.parseInt(plazos1);
 		
 		float interesa = (euribor + diferencial);
