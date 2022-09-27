@@ -2,7 +2,7 @@ package capitulo02.bloque01;
 
 import javax.swing.JOptionPane;
 
-//3º.- Repetir el ejercicio 1º de este bloque de ejercicios, pero pidiendo al usuario cinco variables. Es decir, se pedirán al usuario cinco variables y se mostrará el mayor valor en pantalla.
+//3º. Repetir el ejercicio 1º de este bloque de ejercicios, pero pidiendo al usuario cinco variables. Es decir, se pedirán al usuario cinco variables y se mostrará el mayor valor en pantalla.
 
 public class Ejercicio03 {
 
