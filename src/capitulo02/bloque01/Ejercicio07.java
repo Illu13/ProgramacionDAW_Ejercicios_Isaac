@@ -12,7 +12,8 @@ public class Ejercicio07 {
 		if ((num & 1) == 1) { System.out.println("Es un número impar.");
 		
 		}
-			else { if ((num & 1) == 0) System.out.println("Es un número par");
+		else { 
+			if ((num & 1) == 0) System.out.println("Es un número par");
 			}
 		
 		

@@ -30,41 +30,41 @@ public class Ejercicio05 {
 		if (num1 < num2 && num1 < num3 && num1 < num4 && num1 < num5) {
 			System.out.println("Este es el número más pequeño: " + num1);
 		}
-			else { if (num1 > num2 && num1 > num3 && num1 > num4 && num1 > num5) 
+		else { if (num1 > num2 && num1 > num3 && num1 > num4 && num1 > num5) 
 				System.out.println("Este es el número más grande: " + num1);
-			}
+		}
 		
 		
-				if (num2 < num1 && num2 < num3 && num2 < num4 && num2 < num5) {
+			if (num2 < num1 && num2 < num3 && num2 < num4 && num2 < num5) {
 					System.out.println("Este es el número más pequeño: " + num2);
 					}
 					
-						else { if (num2 > num1 && num2 > num3 && num2 > num4 && num2 > num5) 
+			else { if (num2 > num1 && num2 > num3 && num2 > num4 && num2 > num5) 
 						System.out.println("Este es el número más grande: " + num2);
-					}
+				}
 			
 			
 			
-						if (num3 < num2 && num3 < num1 && num3 < num4 && num3 < num5) {
+					if (num3 < num2 && num3 < num1 && num3 < num4 && num3 < num5) {
 							System.out.println("Este es el número más pequeño: " + num3);
 							}
-							else { if (num3 > num2 && num3 > num1 && num3 > num4 && num3 > num5) 
+					else { if (num3 > num2 && num3 > num1 && num3 > num4 && num3 > num5) 
 								System.out.println("Este es el número más grande: " + num3);
-							}
+					}
 										
-								if (num4 < num2 && num4 < num3 && num4 < num1 && num4 < num5) {
-									System.out.println("Este es el número más pequeño: " + num4);
-									}
+						if (num4 < num2 && num4 < num3 && num4 < num1 && num4 < num5) {
+							System.out.println("Este es el número más pequeño: " + num4);
+							}
 								
-									 else { if (num4 > num2 && num4 > num3 && num4 > num1 && num4 > num5)
+						 else { if (num4 > num2 && num4 > num3 && num4 > num1 && num4 > num5)
 											System.out.println("Este es el número más grande: " + num4);
-									 }
+								}
 										 
 										 
-										if (num5 < num2 && num5 < num3 && num5 < num4 && num5 < num1) {
+									if (num5 < num2 && num5 < num3 && num5 < num4 && num5 < num1) {
 											System.out.println("Este es el número más pequeño: " + num5);
-											}
-												else { if (num5 > num2 && num5 > num3 && num5 > num4 && num5 > num1) 
+									}
+									else { if (num5 > num2 && num5 > num3 && num5 > num4 && num5 > num1) 
 													System.out.println("Este es el número más grande: " + num5);
 										}
 
