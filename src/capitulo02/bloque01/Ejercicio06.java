@@ -16,7 +16,8 @@ public class Ejercicio06 {
 		if (num % 2 == 1) { System.out.println("Este número es impar.");
 			
 		}
-			else { if (num % 2 ==0) 
+		else { 
+			if (num % 2 ==0) 
 				System.out.println("Este número es par.");
 							}
 		
@@ -29,3 +30,4 @@ public class Ejercicio06 {
 	}
 
 }
+ 
