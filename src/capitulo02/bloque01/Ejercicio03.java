@@ -24,6 +24,22 @@ public class Ejercicio03 {
 		int num3 = Integer.parseInt(numero3);
 		int num4 = Integer.parseInt(numero4);
 		int num5 = Integer.parseInt(numero5);
+		
+		if (num1>num2 && num1>num3 && num1>num4 && num1>num5) {
+			System.out.println("Este es el número más grande: " + num1);
+		}
+			if (num2>num1 && num2>num3 && num2>num4 && num2>num5) {
+			System.out.println("Este es el número más grande: " + num2);
+		}
+			if (num3>num2 && num3>num1 && num3>num4 && num3>num5) {
+				System.out.println("Este es el número más grande: " + num3);
+		}
+			if (num4>num2 && num4>num3 && num4>num1 && num4>num5) {
+				System.out.println("Este es el número más grande: " + num4);
+		}
+			if (num5>num2 && num5>num3 && num5>num4 && num5>num1) {
+				System.out.println("Este es el número más grande: " + num5);
+			}
 
 	}
 

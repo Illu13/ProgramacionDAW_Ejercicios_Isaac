@@ -6,23 +6,12 @@ public class sibro {
 
 	public static void main(String[] args) {
 		
+		int num;
+		int num2;
+		num = 2;
+		num2 = 1;
 		
-		
-		String a;
-		String b;
-		
-		a = JOptionPane.showInputDialog("a");
-		b = JOptionPane.showInputDialog("b");
-		
-		int a1 = Integer.parseInt(a);
-		int b1 = Integer.parseInt(b);
-		System.out.println(-a1);
-		System.out.println(-b1);
-		
-		System.out.println(Math.log(20));
-		
-		
-		
+		System.out.println(num & num2);
 		
 		
 	}

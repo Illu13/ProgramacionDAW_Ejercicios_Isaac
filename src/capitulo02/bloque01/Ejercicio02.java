@@ -18,7 +18,7 @@ public class Ejercicio02 {
 		int num1 = Integer.parseInt(numero1);
 		int num2 = Integer.parseInt(numero2);
 		
-		if (num1<num2) { 
+		if (num1 < num2) { 
 			System.out.println(" El número más pequeño es: " + num1);
 		}
 		else {
