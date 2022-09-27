@@ -1,7 +1,7 @@
 package capitulo02.bloque01;
 
 import javax.swing.JOptionPane;
-//Repetir el ejercicio 3º de este bloque de ejercicios, pero mostrando el menor valor de los cinco introducidos por el usuario.
+//Repetir el ejercicio 3º de este bloque de  ejercicios, pero mostrando el menor valor de los cinco introducidos por el usuario.
 public class ejercicio04 {
 
 	public static void main(String[] args) {
