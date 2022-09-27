@@ -2,7 +2,7 @@ package capitulo02.bloque01;
 
 import javax.swing.JOptionPane;
 
-//2º.- Repetir el ejercicio anterior para mostrar el número menor de los dos introducidos .
+//2º.-Repetir el ejercicio anterior para mostrar el número menor de los dos introducidos .
 
 
 public class Ejercicio02 {
