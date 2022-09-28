@@ -2,8 +2,11 @@ package capitulo02.bloque02;
 
 import javax.swing.JOptionPane;
 
-public class Ejercicio01 {
-	public static void main(String[] args) {
+
+//2º.- Realiza un ejercicio igual al anterior, pero con las dos siguientes diferencias: no existe la categoría de números negativos, por tanto si el usuario introduce un negativo, el programa debe terminar; la otra diferencia es que, al acabar, el programa no debe mostrar la suma de los números, sino cuantos han entrado en cada categoría. A esto se llema contadores, a diferencia del ejercicio anterior, que reciben el nombre de acumuladores.
+
+public class Ejercicio02 {
+public static void main(String[] args) {
 		
 		String numero1;
 		String numero2;
@@ -22,80 +25,84 @@ public class Ejercicio01 {
 		int num3 = Integer.parseInt(numero3);
 		int num4 = Integer.parseInt(numero4);
 		int num5 = Integer.parseInt(numero5);
-		int num12 = 0;
-		int num22 = 0;
-		int num32 = 0;
-		int num42 = 0;
+		
+		int nump = 0;
+		int numm = 0;
+		int numg = 0;
 		
 		
 		
 		
-		
-		if (num1 < 0) { 
-			num12 = num12 + num1;
-		}		
+		if (num1 < 0) {
+			return;
+		}
+
 		if (num2 < 0) {
-			num12 = num12 + num2;
+			return;
 		}
 		if (num3 < 0) {
-			num12 = num12 + num3;
+			return;
 		}
-		if(num4 < 0) {
-			num12 = num12 + num4;
+		if (num4 < 0) {
+			return;
 		}
 		if (num5 < 0) {
-			num12 = num12 + num5;
+			return;
 		}
 		if (num1 >= 0 && num1 <=25) {
-			num22 = num22 + num1;
+			nump = nump + 1;
 		}
 		if (num2 >= 0 && num2 <=25) {
-			num22 = num22 + num2;
+			nump = nump + 1;
 		}
 		if (num3 >= 0 && num3 <=25) {
-			num22 = num22 + num3;
+			nump = nump + 1;
 		}
 		if (num4 >= 0 && num4 <=25) {
-			num22 = num22 + num4;
+			nump = nump + 1;
 		}
 		if (num5 >= 0 && num5 <=25) {
-			num22 = num22 + num5;
+			nump = nump + num1;
 		}
 		if (num1 >= 26 && num1 <= 250) {
-			num32 = num32 + num1;
+			numm = numm + 1;
 		}
 		if (num2 >= 26 && num2 <= 250) {
-			num32 = num32 + num2;
+			numm = numm + 1;
 		}
 		if (num3 >= 26 && num3 <= 250) {
-			num32 = num32 + num3;
+			numm = numm + 1;
 		}
 		if (num4 >= 26 && num4 <= 250) {
-			num32 = num32 + num4;
+			numm = numm + 1;
 		}
 		if (num5 >= 26 && num5 <= 250) {
-			num32 = num32 + num5;
+			numm = numm + 1;
 		}
 		if (num1 > 250) {
-			num42 = num42 + num1;
+			numg = numg + 1;
 		}
 		if (num2 > 250) {
-			num42 = num42 + num2;
+			numg = numg + 1;
 		}
 		if (num3 > 250) {
-			num42 = num42 + num3;
+			numg = numg + 1;
 		}
 		if (num4 > 250) {
-			num42 = num42 + num4;
+			numg = numg + 1;
 		}
 		if (num5 > 250) {
-			num42 = num42 + num5;
+			numg = numg + 1;
 		}
 		
-		System.out.println("La suma de los números negativos es: " + num12);
-		System.out.println("La suma de los números pequeños es: " + num22);
-		System.out.println("La suma de los números medianos es: " + num32);
-		System.out.println("La suma de los números grandes es: " + num42);
+		System.out.println("La cantidad de números pequeños es: " + nump);
+		System.out.println("La cantidad de números medianos es: " + numm);
+		System.out.println("La cantidad de números grandes es: " + numg);
+		
+		
+		
+		
+		
 		
 		
 		
@@ -103,5 +110,4 @@ public class Ejercicio01 {
 		
 		
 	}
-
 }
