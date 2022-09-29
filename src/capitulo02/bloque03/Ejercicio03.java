@@ -25,12 +25,12 @@ public class Ejercicio03 {
 		String opcion1;
 		String cateto12;
 		String cateto22;
-		String radiocirculo12;
-		String radiocirculo22;
-		String baserectangulo12;
-		String alturarectangulo22;
-		String basetriangulo12;
-		String alturatriangulo22;
+		String radioCirculo12;
+		String radioCirculo22;
+		String baseRectangulo12;
+		String baseRectangulo22;
+		String baseTriangulo12;
+		String alturaTriangulo22;
 		
 		System.out.println("1-Cálculo hipotenusa triángulo");
 		System.out.println("2-Cálculo superficie circunferencia");
@@ -52,31 +52,31 @@ public class Ejercicio03 {
 		break;
 		
 		case 2: 
-		radiocirculo12 = JOptionPane.showInputDialog("Introduzca el radio del círculo");
-		double radiocirculo1 = Double.parseDouble(radiocirculo12);
-		System.out.println("La superficie de la circunferencia es: " + Math.PI * Math.pow(radiocirculo1, 2));
+		radioCirculo12 = JOptionPane.showInputDialog("Introduzca el radio del círculo");
+		double radioCirculo1 = Double.parseDouble(radioCirculo12);
+		System.out.println("La superficie de la circunferencia es: " + Math.PI * Math.pow(radioCirculo1, 2));
 		break;
 		
 		case 3:
-		radiocirculo22 = JOptionPane.showInputDialog("Introduzca el radio del círculo");
-		double radiocirculo2 = Double.parseDouble(radiocirculo22);
-		System.out.println("El perímetro de la circunferencia es: " + 2 * Math.PI * radiocirculo2);
+		radioCirculo22 = JOptionPane.showInputDialog("Introduzca el radio del círculo");
+		double radioCirculo2 = Double.parseDouble(radioCirculo22);
+		System.out.println("El perímetro de la circunferencia es: " + 2 * Math.PI * radioCirculo2);
 		break;
 		
 		case 4:
-		baserectangulo12 = JOptionPane.showInputDialog("Introduzca la base del rectángulo");
-		double baserectangulo1 = Double.parseDouble(baserectangulo12);
-		alturarectangulo22 = JOptionPane.showInputDialog("Introduzca la altura del rectángulo");
-		double alturarectangulo1 = Double.parseDouble(alturarectangulo22);
-		System.out.println("El área del rectángulo es: " + baserectangulo1 * alturarectangulo1);
+		baseRectangulo12 = JOptionPane.showInputDialog("Introduzca la base del rectángulo");
+		double baseRectangulo1 = Double.parseDouble(baseRectangulo12);
+		baseRectangulo22 = JOptionPane.showInputDialog("Introduzca la altura del rectángulo");
+		double alturaRectangulo1 = Double.parseDouble(baseRectangulo22);
+		System.out.println("El área del rectángulo es: " + baseRectangulo1 * alturaRectangulo1);
 		break;
 		
 		case 5: 
-		basetriangulo12 = JOptionPane.showInputDialog("Introduzca la base del triángulo");
-		double basetriangulo1 = Double.parseDouble(basetriangulo12);
-		alturatriangulo22 = JOptionPane.showInputDialog("Introduzca la altura del triángulo");
-		double alturatriangulo1 = Double.parseDouble(alturatriangulo22);
-		System.out.println("La base del triángulo es: " + (basetriangulo1 * alturatriangulo1) / 2);
+		baseTriangulo12 = JOptionPane.showInputDialog("Introduzca la base del triángulo");
+		double baseTriangulo1 = Double.parseDouble(baseTriangulo12);
+		alturaTriangulo22 = JOptionPane.showInputDialog("Introduzca la altura del triángulo");
+		double alturaTriangulo1 = Double.parseDouble(alturaTriangulo22);
+		System.out.println("La base del triángulo es: " + (baseTriangulo1 * alturaTriangulo1) / 2);
 		break;
 		
 		case 0: 

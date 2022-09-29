@@ -12,12 +12,12 @@ public class Ejercicio04 {
 	public static void main(String[] args) {
 		
 
-		String preciocompra;
-		preciocompra = JOptionPane.showInputDialog("Introduzca el precio de la compra");
-		int precio = Integer.parseInt(preciocompra);
-		String dineropagar;
-		dineropagar = JOptionPane.showInputDialog("Introduzca con cuanto dinero vas a pagar");
-		int dinero = Integer.parseInt(dineropagar);
+		String precioCompra;
+		precioCompra = JOptionPane.showInputDialog("Introduzca el precio de la compra");
+		int precio = Integer.parseInt(precioCompra);
+		String dineroPagar;
+		dineroPagar = JOptionPane.showInputDialog("Introduzca con cuanto dinero vas a pagar");
+		int dinero = Integer.parseInt(dineroPagar);
 		
 		int vuelta = precio - dinero;
 		
