@@ -38,17 +38,17 @@ public class Ejercicio02 {
 			
 		case 2: 
 			numero13 = JOptionPane.showInputDialog("Introduzca el primer número de la potencia.");
-			int numeropotencia1 = Integer.parseInt(numero13);
+			int numeroPotencia1 = Integer.parseInt(numero13);
 			numero22 = JOptionPane.showInputDialog("Introduzca el número al que quieres elevar.");
-			int numeropotencia2 = Integer.parseInt(numero22);
-			System.out.println("El resultado es: " + Math.pow(numeropotencia1, numeropotencia2));
+			int numeroPotencia2 = Integer.parseInt(numero22);
+			System.out.println("El resultado es: " + Math.pow(numeroPotencia1, numeroPotencia2));
 			break;
 		case 3:
 			numero14 = JOptionPane.showInputDialog("Introduzca el primer número de la división.");
-			int numerodivision1 = Integer.parseInt(numero14);
+			int numeroDivision1 = Integer.parseInt(numero14);
 			numero23 = JOptionPane.showInputDialog("Introduzca el número por el cual quieres dividir el número anterior");
-			int numerodivision2 = Integer.parseInt(numero23);
-			System.out.println("El resto de la división es: " + numerodivision1 % numerodivision2);
+			int numeroDivision2 = Integer.parseInt(numero23);
+			System.out.println("El resto de la división es: " + numeroDivision1 % numeroDivision2);
 			break;
 		
 		
