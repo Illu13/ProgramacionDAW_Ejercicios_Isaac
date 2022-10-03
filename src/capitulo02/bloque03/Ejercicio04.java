@@ -19,7 +19,7 @@ public class Ejercicio04 {
 		dineroPagar = JOptionPane.showInputDialog("Introduzca con cuanto dinero vas a pagar");
 		int dinero = Integer.parseInt(dineroPagar);
 		
-		int vuelta = precio - dinero;
+		int vuelta = dinero - precio;
 		
 		System.out.println("Necesitarás dar estas monedas de 100: " + vuelta / 100);
 		System.out.println("Necesitarás dar estas monedas de 50: " + (vuelta % 100) / 50);
