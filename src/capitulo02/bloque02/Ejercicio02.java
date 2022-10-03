@@ -62,7 +62,7 @@ public static void main(String[] args) {
 			nump = nump + 1;
 		}
 		if (num5 >= 0 && num5 <=25) {
-			nump = nump + num1;
+			nump = nump + 1; 
 		}
 		if (num1 >= 26 && num1 <= 250) {
 			numm = numm + 1;
