@@ -2,6 +2,9 @@ package capitulo03.bloque02;
 
 import javax.swing.JOptionPane;
 
+//4º.- Reforma el ejercicio anterior, para que el límite sea también introducido por el usuario.
+
+
 public class Ejercicio04 {
 
 	public static void main(String[] args) {
