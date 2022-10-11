@@ -12,7 +12,7 @@ public class Ejercicio02 {
 		limite = JOptionPane.showInputDialog("Introduza el límite inferior");
 		int num = Integer.parseInt(limite);
 		String numero;
-		numero = JOptionPane.showInputDialog("Introduza el número límite");
+		numero = JOptionPane.showInputDialog("Introduza el número límite superior");
 		int num1 = Integer.parseInt(numero);
 		
 		while (num < num1) {
