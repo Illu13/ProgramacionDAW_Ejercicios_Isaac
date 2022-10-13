@@ -11,7 +11,7 @@ public class Ejercicio04 {
 		String numero;
 		numero = JOptionPane.showInputDialog("Introduza el número");
 		int num1 = Integer.parseInt(numero);
-		int mascara = 128;
+		int mascara = 2048;
 		while (mascara != 0) {
 			if ((num1 & mascara) != 0) {
 				
