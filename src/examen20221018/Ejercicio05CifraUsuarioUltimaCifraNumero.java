@@ -31,7 +31,7 @@ public class Ejercicio05CifraUsuarioUltimaCifraNumero {
 			 * Se resta 10 al número aleatorio que obtenemos hasta que el número sea
 			 * inferior a 10. Cuando consigamos esto, nos quedaremos con la última cifra del
 			 * número. Si esta es igual a la cifra introducida por el usuario se comunica,
-			 * para eso está el if.
+			 * para eso está el if. 
 			 */
 			if (numero == ultcifra) {
 				System.out.println("Este número tiene la misma cifra que la que el usuario indicó anteriormente");
