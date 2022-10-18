@@ -14,8 +14,6 @@ public class Ejercicio03 {
 		}
 		for (int i = array1.length - 1; i != 0; i--) {
 			System.out.print(array1[i] + " ");
-			}
-
+		}
 	}
-
 }

@@ -21,6 +21,6 @@ public class Ejercicio05 {
 		}
 		System.out.println(fact);
 		
-		}
 	}
+}
 
