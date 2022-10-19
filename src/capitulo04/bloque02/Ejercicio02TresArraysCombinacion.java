@@ -6,6 +6,8 @@ public class Ejercicio02TresArraysCombinacion {
 
 	public static void main(String[] args) {
 
+		int numarray1 = 0;
+		int numarray2 = 0;
 		int array1[] = new int[150];
 
 		for (int i = 0; i < array1.length; i++) {
@@ -22,10 +24,13 @@ public class Ejercicio02TresArraysCombinacion {
 		int array3[] = new int[150];
 
 		for (int i = 0; i < array3.length; i++) {
+			
 			if (i % 2 == 1) {
-				array3[i] = array1[i];
+				array3[i] = array1[numarray1];
+				numarray1++;
 			} else {
-				array3[i] = array2[i];
+				array3[i] = array2[numarray2];
+				numarray2++;
 			}
 		}
 
