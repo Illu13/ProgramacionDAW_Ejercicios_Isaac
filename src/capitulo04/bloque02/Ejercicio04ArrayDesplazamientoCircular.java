@@ -7,19 +7,24 @@ public class Ejercicio04ArrayDesplazamientoCircular {
 	public static void main(String[] args) {
 
 		int array1[] = new int[5];
-		int auxiliar = 0;
 
 		for (int i = 0; i < array1.length; i++) {
 
 			array1[i] = (int) Math.round(Math.random() * 100);
+			System.out.print(array1[i] + " ");
 		}
+		int variableultima = array1[4];
 
-		for (int i = 0; i < array1.length; i++) {
-			array1[i] = auxiliar;
-			if (i < 4) {
-
+		for (int i = array1.length - 1; i >= 0; i--) {
+			if (i != 0) {
+				array1[i] = array1[i - 1];
+			} else {
+				array1[0] = variableultima;
 			}
 
+		}
+		for (int i = 0; i < array1.length; i++) {
+			System.out.print(array1[i] + " ");
 		}
 	}
 }
