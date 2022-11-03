@@ -16,12 +16,12 @@ public class Ejercicio07TresEnRaya {
 		int posicionX = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Introduzca la posición X");
 		int posicionY = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Introduzca la posición Y");
 		
-		if (matriz[posicionY][posicionX] == 0) {
-		           matriz[posicionY][posicionX] = turno;
+		if (matriz[posicionY - 1][posicionX - 1] == 0) {
+		           matriz[posicionY - 1][posicionX - 1] = turno;
 		}
 		else {
-			matriz[posicionY][posicionX] = matriz[posicionY][posicionX];
-			System.out.println("El otro jugador ya ha colocado un número en esa posición.");
+			matriz[posicionY - 1][posicionX - 1] = matriz[posicionY - 1][posicionX - 1];
+			System.out.println("ERES TONTO¡¡¡¡¡¡¡¡¡¡¡");
 			turno = turno - 1;
 		}
 		UtilsArrays.mostrarMatriz(matriz);
@@ -63,11 +63,11 @@ public class Ejercicio07TresEnRaya {
 		if (matriz[0][0] == matriz[1][0] && matriz[1][0] == matriz[2][0] && matriz[0][0] != 0) {
 			return matriz[0][0];
 		}
-		if (matriz[1][0] == matriz[1][1] && matriz[1][1] == matriz[1][2] && matriz[1][0] != 0) {
-			return matriz[1][0];
+		if (matriz[0][1] == matriz[1][1] && matriz[1][1] == matriz[2][1] && matriz[0][1] != 0) {
+			return matriz[0][1];
 		}
-		if (matriz[2][0] == matriz[2][1] && matriz[2][1] == matriz[2][2] && matriz[2][0] != 0) {
-			return matriz[2][0];
+		if (matriz[0][2] == matriz[1][2] && matriz[1][2] == matriz[2][2] && matriz[0][2] != 0) {
+			return matriz[0][2];
 		}
 		return 0;
 
