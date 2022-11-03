@@ -2,6 +2,8 @@ package examen20221018;
 
 import javax.swing.JOptionPane;
 
+
+
 public class Ejercicio02NúmerosPreguntadosUsuario {
 
 	public static void main(String[] args) {
@@ -32,6 +34,8 @@ public class Ejercicio02NúmerosPreguntadosUsuario {
 		for (int i1 = 0; i1 < 10; i1++) {
 			int numero = ((int) Math.round(Math.random() * (limalto - limbajo))) + limbajo;
 			System.out.println(numero);
+			
+			
 		}
 	}
 }
