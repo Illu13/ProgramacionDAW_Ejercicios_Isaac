@@ -5,7 +5,7 @@ import capitulo04.bloque04.UtilsArrays;
 public class ejercicio04Seleccion {
 	public static void main(String[] args) {
 
-		int array[] = UtilsArrays.creaArrayNumerosAzar(6, 0, 1000);
+		int array[] = UtilsArrays.creaArrayNumerosAzar(100, 0, 1000);
 		UtilsArrays.mostrarArray(array);
 		int actual, mas_pequenio, temp;
 
@@ -16,10 +16,11 @@ public class ejercicio04Seleccion {
 				if (array[j] < array[mas_pequenio]) {
 					mas_pequenio = j;
 				}
+			}
 				temp = array[actual];
 				array[actual] = array[mas_pequenio];
 				array[mas_pequenio] = temp;
-			}
+			
 		}
 		UtilsArrays.mostrarArray(array);
 
