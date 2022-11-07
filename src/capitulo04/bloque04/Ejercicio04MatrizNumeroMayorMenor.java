@@ -19,7 +19,7 @@ public class Ejercicio04MatrizNumeroMayorMenor {
 				int num;
 				do {
 					num = Utils.obtenerNumeroAzar(0, 100);
-				} while (estaRepetido(num, matriz));
+				} while (estaRepetidoValor(num, matriz));
 				matriz[i][j] = num;
 			}
 		}
@@ -47,7 +47,7 @@ public class Ejercicio04MatrizNumeroMayorMenor {
 
 	}
 
-	public static boolean estaRepetido(int valor, int m[][]) {
+	public static boolean estaRepetidoValor(int valor, int m[][]) {
 		for (int i = 0; i < m.length; i++) {
 			for (int j = 0; j < m[i].length; j++) {
 				if (valor == m[i][j]) {
