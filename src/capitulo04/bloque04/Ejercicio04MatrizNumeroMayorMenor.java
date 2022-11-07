@@ -1,5 +1,7 @@
 package capitulo04.bloque04;
 
+
+
 // Realiza un programa que rellene un array de 6 filas por 10 columnas con números enteros positivos comprendidos entre 0 y 1000 (ambos incluidos). A continuación, el programa deberá dar la posición tanto del máximo como del mínimo. Los números dentro de la matriz no pueden repetirse.
 
 public class Ejercicio04MatrizNumeroMayorMenor {
@@ -14,10 +16,11 @@ public class Ejercicio04MatrizNumeroMayorMenor {
 
 		for (i = 0; i < matriz.length; i++) {
 			for (j = 0; j < matriz[i].length; j++) {
-				for (; j < matriz[i].length; j++) {
-					matriz[i][j] = Utils.obtenerNumeroAzar(0, 10);
-					estaRepetido(matriz, i, j);
-				}
+				int num;
+				do {
+					num = Utils.obtenerNumeroAzar(0, 100);
+				} while (estaRepetido(num, matriz));
+				matriz[i][j] = num;
 			}
 		}
 
@@ -44,29 +47,14 @@ public class Ejercicio04MatrizNumeroMayorMenor {
 
 	}
 
-	public static void estaRepetido(int matriz[][], int i, int j) {
-
-		for (int k = i; k >= 0; k--) {
-			if (i == k) {
-				for (int l = j - 1; l > -1; l--) {
-					if (matriz[i][j] == matriz[k][l]) {
-						do
-						matriz[i][j] = Utils.obtenerNumeroAzar(0, 100);
-						while (matriz[i][j] == matriz[k][l]);
-					}
+	public static boolean estaRepetido(int valor, int m[][]) {
+		for (int i = 0; i < m.length; i++) {
+			for (int j = 0; j < m[i].length; j++) {
+				if (valor == m[i][j]) {
+					return true;
 				}
-
-			} else {
-
-				for (int l = 11; l > -1; l--) {
-					if (matriz[i][j] == matriz[k][l]) {
-						matriz[i][j] = Utils.obtenerNumeroAzar(0, 100);
-					}
-				}
-
 			}
 		}
-
+		return false;
 	}
-
 }

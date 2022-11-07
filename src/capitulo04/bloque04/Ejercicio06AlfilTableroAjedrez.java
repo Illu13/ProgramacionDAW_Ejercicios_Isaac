@@ -1,68 +1,48 @@
 package capitulo04.bloque04;
 
+
+
 //6.- Escribe un programa que, dada una posición en un tablero de ajedrez, nos diga a qué casillas podría saltar un alfil que se encuentra en esa posición. Como se indica en la figura, el alfil se mueve siempre en diagonal. El tablero cuenta con 64 casillas. Las columnas se indican con las letras de la “a” a la “h” y las filas se indican del 1 al 8.
 
 public class Ejercicio06AlfilTableroAjedrez {
 
 	public static void main(String[] args) {
 
-		int matriz[][] = new int[8][8];
-
-		int posicionXAlfil;
-		int posicionYAlfil;
+		int posicionxAlfil, posicionyAlfil;
+		int tablero[][] = UtilsArrays.creaEInicializaMatriz(8, 8, 0);
 
 		do {
-			posicionYAlfil = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Posición Y alfil:");
-			posicionXAlfil = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Posición X alfil");
-		} while (posicionXAlfil >= 8 && posicionYAlfil >= 8);
+			posicionxAlfil = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Posición Y alfil:");
+			posicionyAlfil = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Posición X alfil");
+		} while (posicionxAlfil >= 8 && posicionyAlfil >= 8);
 
-		int posicionYAlfil2 = posicionYAlfil;
-		int posicionXAlfil2 = posicionXAlfil;
-		int posicionXAlfilInicial = posicionXAlfil;
-		int posicionYAlfilInicial = posicionYAlfil;
+		System.out.println("Posibles posiciones");
+		UtilsArrays.mostrarMatriz(tablero);
 
-		for (int i = 0; i < posicionYAlfilInicial; i++) {
-			posicionYAlfil2 = posicionYAlfil - 1;
-			posicionYAlfil = posicionYAlfil2;
-			posicionXAlfil2 = posicionXAlfil - 1;
-			posicionXAlfil = posicionXAlfil2;
-			System.out.println("El alfil se podría ir a la posición " + posicionXAlfil2 + "," + posicionYAlfil2);
-		}
-		posicionYAlfil = posicionYAlfilInicial;
-		posicionXAlfil = posicionXAlfilInicial;
+		
+		tablero[posicionyAlfil][posicionxAlfil] = 2;
 
-		for (int i = 0; i <= 7 - (posicionXAlfilInicial + 1); i++) {
-			posicionYAlfil2 = posicionYAlfil + 1;
-			posicionYAlfil = posicionYAlfil2;
-			posicionXAlfil2 = posicionXAlfil + 1;
-			posicionXAlfil = posicionXAlfil2;
-			System.out.println("El alfil se podría ir a la posición " + posicionXAlfil2 + "," + posicionYAlfil2);
-		}
-		posicionYAlfil = posicionYAlfilInicial;
-		posicionXAlfil = posicionXAlfilInicial;
-		for (int i = 0; i > -1; i++) {
-			posicionYAlfil2 = posicionYAlfil - 1;
-			posicionYAlfil = posicionYAlfil2;
-			posicionXAlfil2 = posicionXAlfil + 1;
-			posicionXAlfil = posicionXAlfil2;
-			System.out.println("El alfil se podría ir a la posición " + posicionXAlfil2 + "," + posicionYAlfil2);
-			if (posicionXAlfil == 8 || posicionYAlfil == 0) {
-				break;
-			}
+		
+		for (int i = posicionyAlfil - 1, j = posicionxAlfil - 1; i > -1 && j > -1; i--, j--) {
+			tablero[i][j] = 1;
 		}
 
-		posicionYAlfil = posicionYAlfilInicial;
-		posicionXAlfil = posicionXAlfilInicial;
-		for (int i = 0; i > -1; i++) {
-			posicionYAlfil2 = posicionYAlfil + 1;
-			posicionYAlfil = posicionYAlfil2;
-			posicionXAlfil2 = posicionXAlfil - 1;
-			posicionXAlfil = posicionXAlfil2;
-			System.out.println("El alfil se podría ir a la posición " + posicionXAlfil2 + "," + posicionYAlfil2);
-			if (posicionXAlfil == 0 || posicionYAlfil == 8) {
-				break;
-			}
+		
+		for (int i = posicionyAlfil + 1, j = posicionxAlfil + 1; i < tablero.length && j < tablero[i].length; i++, j++) {
+			tablero[i][j] = 1;
 		}
+
+		
+		for (int i = posicionyAlfil - 1, j = posicionxAlfil + 1; i > -1 && j < tablero[i].length; i--, j++) {
+			tablero[i][j] = 1;
+		}
+
+		
+		for (int i = posicionyAlfil + 1, j = posicionxAlfil - 1; i < tablero.length && j > -1; i++, j--) {
+			tablero[i][j] = 1;
+		}
+
+		UtilsArrays.mostrarMatriz(tablero);
 	}
 
 }
