@@ -18,6 +18,22 @@ public class UtilsArrays {
 		}
 		System.out.println();
 	}
+	
+	public static void mostrarArrayDouble (double[] array) {
+		System.out.println("Contenido del array");
+		for (int i = 0; i < array.length; i++) {
+			System.out.print(array[i] + " ");
+		}
+		System.out.println();
+	}
+	
+	public static void mostrarArrayFloat (float[] array) {
+		System.out.println("Contenido del array");
+		for (int i = 0; i < array.length; i++) {
+			System.out.print(array[i] + " ");
+		}
+		System.out.println();
+	}
 
 	/**
 	 * 
