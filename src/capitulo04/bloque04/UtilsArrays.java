@@ -11,6 +11,14 @@ public class UtilsArrays {
 	 * 
 	 * @param array
 	 */
+	public static void mostrarArrayConDescripcion (int[] array, String texto) {
+		System.out.println(texto);
+		for (int i = 0; i < array.length; i++) {
+			System.out.print(array[i] + " ");
+		}
+		System.out.println();
+	}
+	
 	public static void mostrarArray (int[] array) {
 		System.out.println("Contenido del array");
 		for (int i = 0; i < array.length; i++) {
@@ -108,6 +116,16 @@ public class UtilsArrays {
 	}
 	
 	public static void mostrarMatriz (int matriz[][]) {
+		System.out.println("Contenido de la matriz");
+		for (int i = 0; i < matriz.length; i++) {
+			for (int j = 0; j < matriz[i].length; j++) {
+				System.out.print(matriz[i][j] + "\t");
+			}
+			System.out.println();
+		}
+	}
+	
+	public static void mostrarMatrizChar (char matriz[][]) {
 		System.out.println("Contenido de la matriz");
 		for (int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j < matriz[i].length; j++) {

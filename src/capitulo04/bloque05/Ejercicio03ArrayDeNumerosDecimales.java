@@ -24,7 +24,7 @@ public class Ejercicio03ArrayDeNumerosDecimales {
 		}
 		
 		UtilsArrays.mostrarArrayDouble(array);
-		System.out.println(contadorDecimalesSuperiores);
+		System.out.println("Numeros con decimal superior a 0.49: " + contadorDecimalesSuperiores);
 		
 	}
 
