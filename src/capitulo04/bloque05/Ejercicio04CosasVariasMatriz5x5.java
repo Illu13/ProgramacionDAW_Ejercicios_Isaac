@@ -18,6 +18,8 @@ public class Ejercicio04CosasVariasMatriz5x5 {
 		matrizFilaEliminada(matriz, fila);
 		
 	}
+	
+	
 
 	public static void inicializaMatriz(int matriz[][]) {
 		for (int i = 0; i < matriz.length; i++) {

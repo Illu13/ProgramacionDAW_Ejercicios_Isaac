@@ -2,15 +2,21 @@ package pruebas;
 
 import javax.swing.JOptionPane;
 
+import capitulo04.bloque04.Utils;
+
 public class sibro {
 
 	public static void main(String[] args) {
 		
-			int num1 = 64;
-			int num2 = 4;
-			
-			System.out.println(num1 | num2);
+		int sexo = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Sexo");
+		int dividendo = sexo;
 		
+		while (dividendo > 0) {
+			if (sexo % dividendo == 0) {
+				System.out.println(dividendo + " es divisor de " + sexo);
+			}
+			dividendo --;
+		}
 		
 	}
 
