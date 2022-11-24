@@ -13,6 +13,13 @@ public class Ejercicio05removeInteger {
 		UtilsArrays.mostrarArray(removeInteger(array, numeroABuscarYRemplazar));
 	}
 	
+	
+	/**
+	 * 
+	 * @param array
+	 * @param numeroABuscarYRemplazar
+	 * @return
+	 */
 	public static int[] removeInteger (int [] array, int numeroABuscarYRemplazar) {
 		
 		

@@ -13,6 +13,12 @@ public class Ejercicio04CountOcurrences {
 		System.out.println(countOcurrences(array, numeroABuscar));
 	}
 	
+	/**
+	 * 
+	 * @param array
+	 * @param numeroABuscar
+	 * @return
+	 */
 	public static int countOcurrences (int[] array, int numeroABuscar) {
 	
 		int contadorNumeros = 0;	

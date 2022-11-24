@@ -15,6 +15,12 @@ public class Ejercicio03AddInteger {
 		UtilsArrays.mostrarArray(addInteger(array, numeroAAñadir));
 	}
 	
+	/**
+	 * 
+	 * @param array
+	 * @param numeroAAñadir
+	 * @return
+	 */
 	public static int[] addInteger (int[] array, int numeroAAñadir) {
 		
 		int[] array2 = new int [array.length + 1];

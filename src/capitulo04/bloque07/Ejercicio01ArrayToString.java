@@ -7,11 +7,17 @@ public class Ejercicio01ArrayToString {
 	public static void main(String[] args) {
 		int array[] = new int[300];
 		for (int i = 0; i < array.length; i++) {
-			array[i] = Utils.obtenerNumeroAzar(65, 90);
+			array[i] = Utils.obtenerNumeroAzar(0, 200);
 		}
 		System.out.println(arrayToString(array));
 	}
+	
 
+	/**
+	 * 
+	 * @param array
+	 * @return
+	 */
 	public static String arrayToString(int array[]) {
 		String str = "";
 		for (int i = 0; i < array.length; i++) {

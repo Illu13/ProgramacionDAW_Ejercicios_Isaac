@@ -16,6 +16,14 @@ public class Ejercicio02findAndReplace {
 		UtilsArrays.mostrarArrayConDescripcion(findAndReplace(array, numeroBuscar, numeroRemplazar), "Este es el array tras los cambios");
 	}
 
+	
+	/**
+	 * 
+	 * @param array
+	 * @param numeroBuscar
+	 * @param numeroRemplazar
+	 * @return
+	 */
 	public static int [] findAndReplace (int array[], int numeroBuscar, int numeroRemplazar) {
 		
 		for (int i = 0; i < array.length; i++) {
