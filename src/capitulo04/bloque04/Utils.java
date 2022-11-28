@@ -70,6 +70,12 @@ public class Utils {
 		int numEntero = Integer.parseInt(str);
 		return numEntero;
 	}
+	
+	public static float obtenerFloatPorJOptionPaneConDescripcion(String desc) {
+		String str = JOptionPane.showInputDialog(desc);
+		float num = Float.parseFloat(str);
+		return num;
+	}
 
 	public static int obtenerEnteroPorJOptionPaneEntreLimitesYDescripcion(int min, int max, String desc) {
 		
