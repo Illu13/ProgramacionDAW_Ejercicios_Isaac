@@ -7,7 +7,7 @@ public class Articulos {
 	private Float precio;
 	
 	public Articulos() {
-		
+		super();
 	}
 	
 	public Articulos (String codigo, String nombre, Float precio) {
