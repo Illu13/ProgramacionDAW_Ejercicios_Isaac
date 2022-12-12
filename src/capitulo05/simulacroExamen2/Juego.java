@@ -11,8 +11,8 @@ public class Juego {
 		System.out.println(campoBatalla.toString());
 		campoBatalla.mezclarHumanos();
 		campoBatalla.mezclarMonstruos();
-		System.out.println(campoBatalla.toString());
 		campoBatalla.inicializarBatalla();
+		System.out.println(campoBatalla.toString());
 		
 	}
 

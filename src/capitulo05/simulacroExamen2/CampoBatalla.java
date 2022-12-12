@@ -54,48 +54,41 @@ public class CampoBatalla {
 	}
 
 	public void inicializarBatalla() {
-		
+
 		int i = 0;
-		int j = 0;
-		
+
 		do {
-			
 
-			for (; i < humanos.length;) {
-				if (humanos[i].isEstaVivo() == true) {
-					break;
-				} else {
-					i++;
-				}
-
-			}
-
-			for (; j < monstruos.length;) {
-				if (monstruos[j].isEstaVivo() == true) {
+			for (; i < monstruos.length; i++) {
+				if (monstruos[i].isEstaVivo() == true) {
 					break;
 				} 
-				else {
-					if (j != 19) {
-						j++;
-					}
-					else {
-						
-					}
+			}
+
+			if (i < monstruos.length) {
+				monstruos[i].setVida(monstruos[i].getVida() - Utils.obtenerNumeroAzar(5, 25));
+				if (monstruos[i].getVida() <= 0) {
+					monstruos[i].setEstaVivo(false);
+				}
+
+			}
+
+			
+			for (i = 0; i < humanos.length; i++) {
+				if (humanos[i].isEstaVivo() == true) {
+					break;
+				} 
+
+			}
+
+			if (i < humanos.length) {
+				humanos[i].setVida(humanos[i].getVida() - Utils.obtenerNumeroAzar(5, 25));
+
+				if (humanos[i].getVida() < 0) {
+					humanos[i].setEstaVivo(false);
 				}
 			}
-			
-			humanos[i].setVida(humanos[i].getVida() - Utils.obtenerNumeroAzar(5, 25));
-			monstruos[j].setVida(monstruos[j].getVida() - Utils.obtenerNumeroAzar(5, 25));
-		
 
-			if (monstruos[j].getVida() < 0) {
-				monstruos[j].setEstaVivo(false);
-			}
-			if (humanos[i].getVida() < 0) {
-				humanos[i].setEstaVivo(false);
-			}
-			
-			
 		} while (estanMuertos() == false);
 	}
 
@@ -117,7 +110,7 @@ public class CampoBatalla {
 
 	@Override
 	public String toString() {
-		return "CampoBatalla [humanos=" + Arrays.toString(humanos) + ", monstruos=" + Arrays.toString(monstruos) + "]";
+		return "CampoBatalla [humanos=" + Arrays.toString(humanos) + "\nmonstruos=" + Arrays.toString(monstruos) + "]";
 	}
 
 	public boolean estanMuertos() {
@@ -127,13 +120,11 @@ public class CampoBatalla {
 			if (humanos[i].isEstaVivo() == true) {
 				return false;
 			}
-			
+
 			if (humanos[humanos.length - 1].isEstaVivo() == false) {
 				System.out.println("Han ganado los monstruos.");
 				return true;
 			}
-			
-			
 
 		}
 
@@ -141,7 +132,7 @@ public class CampoBatalla {
 
 			if (monstruos[i].isEstaVivo() == true) {
 				return false;
-			} 
+			}
 			if (monstruos[monstruos.length - 1].isEstaVivo() == false) {
 				System.out.println("Han ganado los humanos.");
 				return true;
