@@ -1,19 +1,15 @@
 package capitulo05.simulacroExamen2;
 
-
+import java.util.ArrayList;
+import java.util.List;
 
 public class Juego {
 
 	public static void main(String[] args) {
 		
-		CampoBatalla campoBatalla = new CampoBatalla();
+	List<Integer> numeros = new ArrayList<Integer>();
 	
-		System.out.println(campoBatalla.toString());
-		campoBatalla.mezclarHumanos();
-		campoBatalla.mezclarMonstruos();
-		campoBatalla.inicializarBatalla();
-		System.out.println(campoBatalla.toString());
-		
+	
 	}
 
 }
