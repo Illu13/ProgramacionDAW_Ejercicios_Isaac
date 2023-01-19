@@ -71,6 +71,12 @@ public class Utils {
 		return numEntero;
 	}
 	
+	public static String obtenerStringPorJOptionPaneConDescripcion(String desc) {
+		String str = JOptionPane.showInputDialog(desc);
+		return str;
+	}
+	
+	
 	public static float obtenerFloatPorJOptionPaneConDescripcion(String desc) {
 		String str = JOptionPane.showInputDialog(desc);
 		float num = Float.parseFloat(str);

@@ -79,6 +79,7 @@ public class ListaElementosInteger {
 				posicion = Utils.obtenerEnteroPorJOptionPaneConDescripcion("¿A partir de qué posición?");
 				valorMin = Utils.obtenerEnteroPorJOptionPaneConDescripcion("¿Cuál quieres que sea el valor mínimo?");
 				valorMax = Utils.obtenerEnteroPorJOptionPaneConDescripcion("¿Cuál quieres que sea el valor máximo?");
+				longitudLista += longitud;
 				
 				for (int i = 0; i < longitud; i++) {
 					numerosNuevos.add(Utils.obtenerNumeroAzar(valorMin, valorMax));
