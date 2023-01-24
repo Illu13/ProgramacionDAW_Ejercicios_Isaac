@@ -13,7 +13,7 @@ public class Articulo {
 	}
 
 
-	public Articulo(int codigoBarras, int cantidadStock, int numeroEstante) {
+	public Articulo(int codigoBarras, int cantidadStock, int numeroEstante	) {
 		super();
 		this.codigoBarras = codigoBarras;
 		this.cantidadStock = cantidadStock;
