@@ -7,12 +7,13 @@ public class Hola_Mundo {
 
 	public static void main(String[] args) {
 	
-	int num = Utils.obtenerEnteroPorJOptionPaneEntreLimitesYDescripcion(1, 3, "sexo");
-	
 
 	
+	String str = "vendo renault clio maricon";
 	
-	System.out.println("La media aritmética de esos 3 números es: " + num);
+	System.out.println(str.substring(3, 9));
+	
+
 	
 	}
 
