@@ -16,7 +16,7 @@ public class Ejercicio_1 {
 		int nume1;
 		
 		numero1 = JOptionPane.showInputDialog("Introduzca un número entero");
-		numero2 = JOptionPane.showInputDialog("Introduzca un número float");
+		numero2 = JOptionPane.showInputDialog("Introduzca un número flotante");
 		numero3 = JOptionPane.showInputDialog("Introduzca otro número doble");
 		
 		int num1 = Integer.parseInt(numero1);
