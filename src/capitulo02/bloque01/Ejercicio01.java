@@ -11,7 +11,7 @@ public class Ejercicio01 {
 		String numero1;
 		String numero2;
 		numero1 = JOptionPane.showInputDialog("Introduzca un número");
-		numero2 = JOptionPane.showInputDialog("Introduzca otro número");
+		numero2 = JOptionPane.showInputDialog("Introduzca un número");
 		int num1 = Integer.parseInt(numero1);
 		int num2 = Integer.parseInt(numero2);
 		
