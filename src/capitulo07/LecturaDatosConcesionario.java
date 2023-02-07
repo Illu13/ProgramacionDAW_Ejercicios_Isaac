@@ -1,0 +1,171 @@
+package capitulo07;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import com.mysql.cj.jdbc.result.UpdatableResultSet;
+
+import capitulo04.bloque04.Utils;
+
+public class LecturaDatosConcesionario {
+
+	public static void main(String[] args) {
+		pruebaConsultaPorFicheroDePropiedades();
+	}
+
+	private static void pruebaConsultaPorFicheroDePropiedades() {
+		String marca = null;
+		String cif = null;
+		int id = 0;
+
+		try {
+
+			int opcion = Utils.obtenerEnteroPorJOptionPaneConDescripcion(
+					"0.-Salir" + "\n1.-Ver todos los registros" + "\n2.-Insertar un registro"
+							+ "\n3.-Modificar un registro"
+							+ "\n4.-Eliminar un registro"
+							+ "\nIntroduzca una opción.");
+
+			Connection conn = getConnection();
+
+			switch (opcion) {
+
+			case 0:
+				conn.close();
+				System.exit(0);
+
+			case 1:
+				VerRegistros(conn);
+				break;
+			case 2:
+				cif = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca el CIF" + " del nuevo fabricante");
+				marca = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca el nombre del nuevo fabricante");
+				InsertarRegistro(conn, cif, marca);
+				break;
+			case 3:
+				 id = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Introduzca el id del registro "
+				 		+ "a modificar");
+				 cif = Utils
+						.obtenerStringPorJOptionPaneConDescripcion("Introduzca el CIF" + " del fabricante");
+				 marca = Utils
+						.obtenerStringPorJOptionPaneConDescripcion("Introduzca el nombre del fabricante");
+				
+				 UpdateRegistro(conn, cif, marca, id);
+				 break;
+			case 4 :
+				id = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Introduzca el id del registro "
+				 		+ "a borrar");
+				
+				DeleteRegistro(conn, id);
+				
+
+			}
+
+		} catch (ClassNotFoundException ex) {
+			System.out.println("Imposible acceder al driver Mysql");
+		} catch (SQLException ex) {
+			System.out.println("Error en la ejecución SQL: " + ex.getMessage());
+		}
+	}
+
+	/*
+	 * 
+	 */
+	public static Connection getConnection() throws SQLException, ClassNotFoundException {
+
+		String driver = JDBCPropiedades.getProperty("JDBC_DRIVER_CLASS");
+		String user = JDBCPropiedades.getProperty("JDBC_USER");
+		String password = JDBCPropiedades.getProperty("JDBC_PASSWORD");
+		String host = JDBCPropiedades.getProperty("JDBC_HOST");
+		String schema = JDBCPropiedades.getProperty("JDBC_SCHEMA_NAME");
+		String properties = JDBCPropiedades.getProperty("JDBC_PROPERTIES");
+
+		// A través de la siguiente línea comprobamos si tenemos acceso al driver MySQL,
+		// si no fuera así
+		// no podemos trabajar con esa BBDD.
+		Class.forName(driver);
+
+		// Necesitamos obtener un acceso a la BBDD, eso se materializa en un objeto de
+		// tipo Connection, al cual
+		// le tenemos que pasar los parámetros de conexión.
+		return DriverManager.getConnection("jdbc:mysql://" + host + "/" + schema + properties, user, password);
+
+	}
+
+	public static void VerRegistros(Connection conn) throws SQLException {
+
+		Statement s = (Statement) conn.createStatement();
+		ResultSet rs = s.executeQuery("select * from fabricante");
+
+		// Navegaci�n del objeto ResultSet
+		while (rs.next()) {
+			System.out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getString(3));
+		}
+
+		// Cierre de los elementos
+		rs.close();
+		s.close();
+
+	}
+
+	public static int EscogerPrimerIDDisponible(Connection conn) throws SQLException {
+
+		int idDisponible = 0;
+		Statement s = (Statement) conn.createStatement();
+		ResultSet rs = s.executeQuery("select max(id) from fabricante");
+
+		while (rs.next()) {
+			idDisponible = rs.getInt(1);
+
+		}
+
+		rs.close();
+		s.close();
+
+		return idDisponible + 1;
+
+	}
+
+	public static void InsertarRegistro(Connection conn, String cif, String modelo) throws SQLException {
+
+		int id = EscogerPrimerIDDisponible(conn);
+
+		Statement s = (Statement) conn.createStatement();
+		int filasAlteradas = s.executeUpdate("insert into tutorialjavacoches.fabricante (id, cif, nombre) values (" + id
+				+ "," + "'" + cif + "', " + "'" + modelo + "')");
+
+		s.close();
+
+		System.out.println(filasAlteradas);
+
+	}
+
+	public static void UpdateRegistro(Connection conn, String cif, String modelo, int id) throws SQLException {
+
+
+		Statement s = (Statement) conn.createStatement();
+		int filasAlteradas = s.executeUpdate("update tutorialjavacoches.fabricante set cif = " + "'" + cif
+				+ "'" + ", nombre =" + "'" + modelo + "'" + "where id = " + id);
+		s.close();
+
+		System.out.println(filasAlteradas);
+
+	}
+	
+	public static void DeleteRegistro(Connection conn, int id) throws SQLException {
+
+
+		Statement s = (Statement) conn.createStatement();
+		int filasAlteradas = s.executeUpdate("delete from tutorialjavacoches.fabricante where id = " + id);
+		
+
+		s.close();
+
+		System.out.println(filasAlteradas);
+
+	}
+
+}
