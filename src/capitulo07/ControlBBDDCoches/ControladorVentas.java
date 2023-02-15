@@ -10,8 +10,15 @@ import java.util.Date;
 import capitulo04.bloque04.Utils;
 
 public class ControladorVentas {
+	
+	/**
+	 * 
+	 * @param conn
+	 * @return
+	 * @throws SQLException
+	 */
 
-	public static int EscogerPrimerIDDisponible(Connection conn) throws SQLException {
+	public static int escogerPrimerIDDisponible(Connection conn) throws SQLException {
 
 		int idDisponible = 0;
 		Statement s = (Statement) conn.createStatement();
@@ -28,7 +35,13 @@ public class ControladorVentas {
 		return idDisponible + 1;
 
 	}
-	public static void VerRegistros(Connection conn) throws SQLException {
+	
+	/**
+	 * 
+	 * @param conn
+	 * @throws SQLException
+	 */
+	public static void verRegistros(Connection conn) throws SQLException {
 
 		Statement s = (Statement) conn.createStatement();
 		ResultSet rs = s.executeQuery("select * from venta");
@@ -44,7 +57,17 @@ public class ControladorVentas {
 		s.close();
 
 	}
-
+	
+	/**
+	 * 
+	 * @param conn
+	 * @param idCli
+	 * @param idCon
+	 * @param idCoc
+	 * @param fechaNac
+	 * @param precioVenta
+	 * @throws SQLException
+	 */
 	public static void realizaInsert(Connection conn, int idCli, int idCon, int idCoc, String fechaNac,
 			float precioVenta) throws SQLException {
 
@@ -54,7 +77,7 @@ public class ControladorVentas {
 
 		PreparedStatement ps = conn.prepareStatement("insert into tutorialjavacoches.venta "
 				+ "(id, idCliente, idConcesionario, idCoche, fecha, precioVenta) " + "values (?, ?, ?, ?, ?, ?)");
-		ps.setInt(1, EscogerPrimerIDDisponible(conn));
+		ps.setInt(1, escogerPrimerIDDisponible(conn));
 		ps.setInt(2, idCli);
 		ps.setInt(3, idCon);
 		ps.setInt(4, idCoc);
@@ -67,6 +90,18 @@ public class ControladorVentas {
 
 		ps.close();
 	}
+	
+	/**
+	 * 
+	 * @param conn
+	 * @param id
+	 * @param idCli
+	 * @param idCon
+	 * @param idCoc
+	 * @param fechaNac
+	 * @param precioVenta
+	 * @throws SQLException
+	 */
 
 	public static void realizaUpdate(Connection conn, int id, int idCli, int idCon, int idCoc, String fechaNac,
 			float precioVenta) throws SQLException {
@@ -90,6 +125,13 @@ public class ControladorVentas {
 
 		ps.close();
 	}
+	
+	/**
+	 * 
+	 * @param conn
+	 * @param id
+	 * @throws SQLException
+	 */
 	
 	public static void realizaDelete (Connection conn, int id) throws SQLException {
 		

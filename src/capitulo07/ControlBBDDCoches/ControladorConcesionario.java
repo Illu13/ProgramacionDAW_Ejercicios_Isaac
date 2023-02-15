@@ -9,6 +9,13 @@ import java.sql.Statement;
 
 public class ControladorConcesionario {
 	
+	/**
+	 * 
+	 * @return
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
+	
 	public static Connection getConnection() throws SQLException, ClassNotFoundException {
 
 		String driver = JDBCPropiedades.getProperty("JDBC_DRIVER_CLASS");
@@ -30,7 +37,13 @@ public class ControladorConcesionario {
 
 	}
 	
-	public static void VerRegistros(Connection conn) throws SQLException {
+	/**
+	 * 
+	 * @param conn
+	 * @throws SQLException
+	 */
+	
+	public static void verRegistros(Connection conn) throws SQLException {
 
 		Statement s = (Statement) conn.createStatement();
 		ResultSet rs = s.executeQuery("select * from concesionario");
@@ -45,6 +58,15 @@ public class ControladorConcesionario {
 		s.close();
 
 	}
+	
+	/**
+	 * 
+	 * @param conn
+	 * @param cif
+	 * @param nombre
+	 * @param localidad
+	 * @throws SQLException
+	 */
 	
 	public static void realizaInsert (Connection conn, String cif, String nombre, String localidad) throws SQLException {
 		
@@ -64,7 +86,17 @@ public class ControladorConcesionario {
 		ps.close();
 	}
 	
-	public static void UpdateRegistro(Connection conn, int id, String cif, String nombre, String localidad) throws SQLException {
+	/**
+	 * 
+	 * @param conn
+	 * @param id
+	 * @param cif
+	 * @param nombre
+	 * @param localidad
+	 * @throws SQLException
+	 */
+	
+	public static void updateRegistro(Connection conn, int id, String cif, String nombre, String localidad) throws SQLException {
 		
 		PreparedStatement ps = conn.prepareStatement(
 				"update tutorialjavacoches.concesionario set cif = ?, nombre = ?, localidad = ? where id = " + id);
@@ -81,6 +113,13 @@ public class ControladorConcesionario {
 
 	}
 	
+	/**
+	 * 
+	 * @param conn
+	 * @param id
+	 * @throws SQLException
+	 */
+	
 	public static void realizaDelete (Connection conn, int id) throws SQLException {
 		
 		PreparedStatement ps = conn.prepareStatement("Delete from tutorialjavacoches.concesionario where id = ?");
@@ -96,7 +135,12 @@ public class ControladorConcesionario {
 		ps.close();
 	}
 	
-	
+	/**
+	 * 
+	 * @param conn
+	 * @return
+	 * @throws SQLException
+	 */
 	
 	public static int EscogerPrimerIDDisponible(Connection conn) throws SQLException {
 

@@ -10,11 +10,20 @@ import com.mysql.cj.jdbc.result.UpdatableResultSet;
 
 import capitulo04.bloque04.Utils;
 
-public class LecturaDatosConcesionario {
+public class LecturaBBDDConcesionario {
+	
+	/**
+	 * 
+	 * @param args
+	 */
 
 	public static void main(String[] args) {
 		pruebaConsultaPorFicheroDePropiedades();
 	}
+	
+	/**
+	 * 
+	 */
 
 	private static void pruebaConsultaPorFicheroDePropiedades() {
 
@@ -32,6 +41,8 @@ public class LecturaDatosConcesionario {
 		int idCon;
 		int idCli;
 		float precioVenta;
+		
+		do {
 
 		try {
 
@@ -58,7 +69,7 @@ public class LecturaDatosConcesionario {
 
 				case 1:
 
-					ControladorConcesionario.VerRegistros(conn);
+					ControladorConcesionario.verRegistros(conn);
 					conn.close();
 					break;
 
@@ -76,7 +87,7 @@ public class LecturaDatosConcesionario {
 					cif = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca el cif");
 					nombre = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca el nombre");
 					localidad = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca la localidad");
-					ControladorConcesionario.UpdateRegistro(conn, id, cif, nombre, localidad);
+					ControladorConcesionario.updateRegistro(conn, id, cif, nombre, localidad);
 					conn.close();
 					break;
 				case 4:
@@ -98,7 +109,7 @@ public class LecturaDatosConcesionario {
 
 				case 1:
 
-					ControladorFabricante.VerRegistros(conn);
+					ControladorFabricante.verRegistros(conn);
 					conn.close();
 					break;
 
@@ -114,7 +125,7 @@ public class LecturaDatosConcesionario {
 					id = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Introduzca el id del fabricante");
 					cif = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca el cif");
 					nombre = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca el nombre");
-					ControladorFabricante.UpdateRegistro(conn, id, cif, nombre);
+					ControladorFabricante.updateRegistro(conn, id, cif, nombre);
 					conn.close();
 					break;
 				case 4:
@@ -136,7 +147,7 @@ public class LecturaDatosConcesionario {
 
 				case 1:
 
-					ControladorCliente.VerRegistros(conn);
+					ControladorCliente.verRegistros(conn);
 					conn.close();
 					break;
 
@@ -179,7 +190,7 @@ public class LecturaDatosConcesionario {
 					else {
 						activo = false;
 					}
-					ControladorCliente.UpdateRegistro(conn, id, nombre, apellidos, localidad, dni, fechaNac, activo);
+					ControladorCliente.updateRegistro(conn, id, nombre, apellidos, localidad, dni, fechaNac, activo);
 					conn.close();
 					break;
 				case 4:
@@ -199,11 +210,11 @@ public class LecturaDatosConcesionario {
 				switch (opcionCo) {
 				
 				case 1:
-					ControladorCoche.VerRegistros(conn);
+					ControladorCoche.verRegistros(conn);
 					conn.close();
 					break;
 				case 2:
-					ControladorFabricante.VerRegistros(conn);
+					ControladorFabricante.verRegistros(conn);
 					idFab = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Introduzca la id del fabricante "
 							+ "este tiene que estar en la tabla mostrada por consola.");
 					nombre = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca el número de bastidor");
@@ -215,14 +226,14 @@ public class LecturaDatosConcesionario {
 					break;
 				case 3:
 					id = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Introduzca el id del coche a cambiar");
-					ControladorFabricante.VerRegistros(conn);
+					ControladorFabricante.verRegistros(conn);
 					idFab = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Introduzca la id del fabricante "
 							+ "este tiene que estar en la tabla mostrada por consola.");
 					nombre = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca el número de bastidor");
 					apellidos = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca el modelo");
 					localidad = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca el color");
 					
-					ControladorCoche.UpdateRegistro(conn, id, idFab, nombre, apellidos, localidad);
+					ControladorCoche.updateRegistro(conn, id, idFab, nombre, apellidos, localidad);
 					conn.close();
 					break;
 				case 4:
@@ -243,20 +254,20 @@ public class LecturaDatosConcesionario {
 				
 				case 1:
 					
-					ControladorVentas.VerRegistros(conn);
+					ControladorVentas.verRegistros(conn);
 					
 				case 2:
 					
 					System.out.println("Registros cliente");
-					ControladorCliente.VerRegistros(conn);
+					ControladorCliente.verRegistros(conn);
 					idCli = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Introduzca la id del cliente, "
 							+ "tiene que estar en la tabla que acaba de salir en consola");
 					System.out.println("Registros concesionario");
-					ControladorConcesionario.VerRegistros(conn);
+					ControladorConcesionario.verRegistros(conn);
 					idCon = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Introduzca la id del concesionario, "
 							+ "tiene que estar en la tabla que acaba de salir en consola");
 					System.out.println("Registros coches");
-					ControladorCoche.VerRegistros(conn);
+					ControladorCoche.verRegistros(conn);
 					idCoc = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Introduzca la id del coche, "
 							+ "tiene que estar en la tabla que acaba de salir en consola");
 					fechaNac = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca la "
@@ -268,15 +279,15 @@ public class LecturaDatosConcesionario {
 				case 3:
 					id = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Introduzca la id de la venta a modificar");
 					System.out.println("Registros cliente");
-					ControladorCliente.VerRegistros(conn);
+					ControladorCliente.verRegistros(conn);
 					idCli = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Introduzca la id del cliente, "
 							+ "tiene que estar en la tabla que acaba de salir en consola");
 					System.out.println("Registros concesionario");
-					ControladorConcesionario.VerRegistros(conn);
+					ControladorConcesionario.verRegistros(conn);
 					idCon = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Introduzca la id del concesionario, "
 							+ "tiene que estar en la tabla que acaba de salir en consola");
 					System.out.println("Registros coches");
-					ControladorCoche.VerRegistros(conn);
+					ControladorCoche.verRegistros(conn);
 					idCoc = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Introduzca la id del coche, "
 							+ "tiene que estar en la tabla que acaba de salir en consola");
 					fechaNac = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca la "
@@ -299,6 +310,7 @@ public class LecturaDatosConcesionario {
 		} catch (SQLException ex) {
 			System.out.println("Error en la ejecución SQL: " + ex.getMessage());
 		}
+		} while(true);
 	}
 
 	/*

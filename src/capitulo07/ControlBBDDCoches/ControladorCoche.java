@@ -10,8 +10,14 @@ import java.sql.Statement;
 
 
 public class ControladorCoche {
+	/**
+	 * 
+	 * @param conn
+	 * @return
+	 * @throws SQLException
+	 */
 	
-	public static int EscogerPrimerIDDisponible(Connection conn) throws SQLException {
+	public static int escogerPrimerIDDisponible(Connection conn) throws SQLException {
 
 		int idDisponible = 0;
 		Statement s = (Statement) conn.createStatement();
@@ -29,7 +35,13 @@ public class ControladorCoche {
 
 	}
 	
-	public static void VerRegistros(Connection conn) throws SQLException {
+	/**
+	 * 
+	 * @param conn
+	 * @throws SQLException
+	 */
+	
+	public static void verRegistros(Connection conn) throws SQLException {
 
 		Statement s = (Statement) conn.createStatement();
 		ResultSet rs = s.executeQuery("select * from coche");
@@ -46,6 +58,13 @@ public class ControladorCoche {
 
 	}
 	
+	/**
+	 * 
+	 * @param conn
+	 * @param id
+	 * @throws SQLException
+	 */
+	
 	public static void realizaDelete (Connection conn, int id) throws SQLException {
 		
 		PreparedStatement ps = conn.prepareStatement("Delete from tutorialjavacoches.coche where id = ?");
@@ -61,7 +80,18 @@ public class ControladorCoche {
 		ps.close();
 	}
 	
-	public static void UpdateRegistro(Connection conn, int id, int idFabricante, String bastidor,
+	/**
+	 * 
+	 * @param conn
+	 * @param id
+	 * @param idFabricante
+	 * @param bastidor
+	 * @param modelo
+	 * @param color
+	 * @throws SQLException
+	 */
+	
+	public static void updateRegistro(Connection conn, int id, int idFabricante, String bastidor,
 			String modelo, String color) throws SQLException {
 		
 
@@ -84,6 +114,16 @@ public class ControladorCoche {
 
 	}
 	
+	/**
+	 * 
+	 * @param conn
+	 * @param idFabricante
+	 * @param bastidor
+	 * @param modelo
+	 * @param color
+	 * @throws SQLException
+	 */
+	
 	public static void realizaInsert (Connection conn, int idFabricante, String bastidor,
 			String modelo, String color) throws SQLException {
 		
@@ -93,7 +133,7 @@ public class ControladorCoche {
 				"insert into tutorialjavacoches.coche "
 				+ "(id, idFabricante, bastidor, modelo, color) "
 				+ "values (?, ?, ?, ?, ?)");
-		ps.setInt(1, EscogerPrimerIDDisponible(conn));
+		ps.setInt(1, escogerPrimerIDDisponible(conn));
 		ps.setInt(2, idFabricante);
 		ps.setString(3, bastidor);
 		ps.setString(4, modelo);

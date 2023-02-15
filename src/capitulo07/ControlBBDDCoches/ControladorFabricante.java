@@ -7,8 +7,15 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class ControladorFabricante {
+	
+	/**
+	 * 
+	 * @param conn
+	 * @return
+	 * @throws SQLException
+	 */
 
-	public static int EscogerPrimerIDDisponible(Connection conn) throws SQLException {
+	public static int escogerPrimerIDDisponible(Connection conn) throws SQLException {
 
 		int idDisponible = 0;
 		Statement s = (Statement) conn.createStatement();
@@ -25,15 +32,23 @@ public class ControladorFabricante {
 		return idDisponible + 1;
 
 	}
+	
+	/**
+	 * 
+	 * @param conn
+	 * @param cif
+	 * @param modelo
+	 * @throws SQLException
+	 */
 
 	public static void InsertarRegistro(Connection conn, String cif, String modelo) throws SQLException {
 
-		int id = EscogerPrimerIDDisponible(conn);
+		int id = escogerPrimerIDDisponible(conn);
 
 		PreparedStatement ps = conn.prepareStatement(
 				"insert into tutorialjavacoches.fabricante " + "(id, cif, nombre) " + "values (?, ?, ?)");
 
-		ps.setInt(1, EscogerPrimerIDDisponible(conn));
+		ps.setInt(1, escogerPrimerIDDisponible(conn));
 		ps.setString(2, cif);
 		ps.setString(3, modelo);
 
@@ -47,7 +62,16 @@ public class ControladorFabricante {
 
 	}
 	
-	public static void UpdateRegistro(Connection conn, int id, String cif, String nombre) throws SQLException {
+	/**
+	 * 
+	 * @param conn
+	 * @param id
+	 * @param cif
+	 * @param nombre
+	 * @throws SQLException
+	 */
+	
+	public static void updateRegistro(Connection conn, int id, String cif, String nombre) throws SQLException {
 		
 		PreparedStatement ps = conn.prepareStatement(
 				"update tutorialjavacoches.fabricante set cif = ?, nombre = ? where id = " + id);
@@ -62,6 +86,13 @@ public class ControladorFabricante {
 		ps.close();
 
 	}
+	
+	/**
+	 * 
+	 * @param conn
+	 * @param id
+	 * @throws SQLException
+	 */
 	
 	public static void realizaDelete (Connection conn, int id) throws SQLException {
 		
@@ -78,9 +109,12 @@ public class ControladorFabricante {
 		ps.close();
 	}
 	
-	
-
-	public static void VerRegistros(Connection conn) throws SQLException {
+	/**
+	 * 
+	 * @param conn
+	 * @throws SQLException
+	 */
+	public static void verRegistros(Connection conn) throws SQLException {
 
 		Statement s = (Statement) conn.createStatement();
 		ResultSet rs = s.executeQuery("select * from fabricante");
