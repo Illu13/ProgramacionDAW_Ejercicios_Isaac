@@ -2,6 +2,9 @@ package capitulo04.bloque04;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
@@ -106,5 +109,25 @@ public class Utils {
 	 */
 	public static int obtenerEntero() {
 		return obtenerEnteroPorScanner();
+	}
+	
+	public static Date parseoFecha(String fechaSinParseo) {
+		
+		SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
+
+		String fecha = fechaSinParseo;
+
+		Date fechaParseada = null;
+
+		try {
+			fechaParseada = formatoFecha.parse(fecha);
+		} catch (ParseException e) {
+			System.out.println("Error en el parseo de la fecha");
+			e.printStackTrace();
+		}
+		
+		return fechaParseada;
+		
+		
 	}
 }

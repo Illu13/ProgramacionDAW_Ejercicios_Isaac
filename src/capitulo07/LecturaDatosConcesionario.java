@@ -39,11 +39,13 @@ public class LecturaDatosConcesionario {
 
 			case 1:
 				VerRegistros(conn);
+				conn.close();
 				break;
 			case 2:
 				cif = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca el CIF" + " del nuevo fabricante");
 				marca = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca el nombre del nuevo fabricante");
 				InsertarRegistro(conn, cif, marca);
+				conn.close();
 				break;
 			case 3:
 				 id = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Introduzca el id del registro "
@@ -54,12 +56,15 @@ public class LecturaDatosConcesionario {
 						.obtenerStringPorJOptionPaneConDescripcion("Introduzca el nombre del fabricante");
 				
 				 UpdateRegistro(conn, cif, marca, id);
+				 conn.close();
 				 break;
 			case 4 :
 				id = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Introduzca el id del registro "
 				 		+ "a borrar");
 				
 				DeleteRegistro(conn, id);
+				conn.close();
+				break;
 				
 
 			}
