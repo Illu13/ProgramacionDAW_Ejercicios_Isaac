@@ -61,6 +61,60 @@ public class ControladorFabricante {
 		System.out.println(filasAlteradas);
 
 	}
+	/**
+	 * 
+	 * @param conn
+	 * @param id
+	 * @return
+	 * @throws SQLException
+	 */
+	
+	
+	public static String tenerMarcaIDActual(Connection conn, int id) throws SQLException {
+
+		String nombre = null;
+		Statement s = (Statement) conn.createStatement();
+		ResultSet rs = s.executeQuery("select nombre from fabricante where id = " + id);
+
+		while (rs.next()) {
+			nombre = rs.getString(1);
+
+		}
+
+		rs.close();
+		s.close();
+
+		return nombre;
+
+	}
+	
+	/**
+	 * 
+	 * @param conn
+	 * @param id
+	 * @return
+	 * @throws SQLException
+	 */
+	
+	public static String tenerNombreIDActual(Connection conn, int id) throws SQLException {
+
+		String nombre = null;
+		Statement s = (Statement) conn.createStatement();
+		ResultSet rs = s.executeQuery("select cif from fabricante where id = " + id);
+
+		while (rs.next()) {
+			nombre = rs.getString(1);
+
+
+		}
+
+		rs.close();
+		s.close();
+
+		return nombre;
+
+	}
+	
 	
 	/**
 	 * 

@@ -90,6 +90,84 @@ public class ControladorConcesionario {
 	 * 
 	 * @param conn
 	 * @param id
+	 * @return
+	 * @throws SQLException
+	 */
+	
+	public static String tenerCifIDActual(Connection conn, int id) throws SQLException {
+
+		String nombre = null;
+		Statement s = (Statement) conn.createStatement();
+		ResultSet rs = s.executeQuery("select cif from concesionario where id = " + id);
+
+		while (rs.next()) {
+			nombre = rs.getString(1);
+
+		}
+
+		rs.close();
+		s.close();
+
+		return nombre;
+
+	}
+	
+	/**
+	 * 
+	 * @param conn
+	 * @param id
+	 * @return
+	 * @throws SQLException
+	 */
+	
+	public static String tenerNombreIDActual(Connection conn, int id) throws SQLException {
+
+		String nombre = null;
+		Statement s = (Statement) conn.createStatement();
+		ResultSet rs = s.executeQuery("select nombre from concesionario where id = " + id);
+
+		while (rs.next()) {
+			nombre = rs.getString(1);
+
+		}
+
+		rs.close();
+		s.close();
+
+		return nombre;
+
+	}
+	
+	/**
+	 * 
+	 * @param conn
+	 * @param id
+	 * @return
+	 * @throws SQLException
+	 */
+	
+	public static String tenerLocalidadIDActual(Connection conn, int id) throws SQLException {
+
+		String nombre = null;
+		Statement s = (Statement) conn.createStatement();
+		ResultSet rs = s.executeQuery("select localidad from concesionario where id = " + id);
+
+		while (rs.next()) {
+			nombre = rs.getString(1);
+
+		}
+
+		rs.close();
+		s.close();
+
+		return nombre;
+
+	}
+	
+	/**
+	 * 
+	 * @param conn
+	 * @param id
 	 * @param cif
 	 * @param nombre
 	 * @param localidad

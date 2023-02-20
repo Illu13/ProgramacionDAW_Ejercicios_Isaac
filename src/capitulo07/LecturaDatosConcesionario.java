@@ -66,6 +66,13 @@ public class LecturaDatosConcesionario {
 						.obtenerStringPorJOptionPaneConDescripcion("Introduzca el CIF" + " del fabricante");
 				 marca = Utils
 						.obtenerStringPorJOptionPaneConDescripcion("Introduzca el nombre del fabricante");
+				 
+				 if (cif.isEmpty()) {
+					 cif = tenerNombreIDActual(conn, id);
+				 }
+				 if (marca.isEmpty()) {
+					 marca = tenerMarcaIDActual(conn, id);
+				 }
 				
 				 updateRegistro(conn, cif, marca, id);
 				 conn.close();
@@ -152,6 +159,60 @@ public class LecturaDatosConcesionario {
 		return idDisponible + 1;
 
 	}
+	
+	/**
+	 * 
+	 * @param conn
+	 * @param id
+	 * @return
+	 * @throws SQLException
+	 */
+	
+	public static String tenerMarcaIDActual(Connection conn, int id) throws SQLException {
+
+		String nombre = null;
+		Statement s = (Statement) conn.createStatement();
+		ResultSet rs = s.executeQuery("select nombre from fabricante where id = " + id);
+
+		while (rs.next()) {
+			nombre = rs.getString(1);
+
+		}
+
+		rs.close();
+		s.close();
+
+		return nombre;
+
+	}
+	
+	/**
+	 * 
+	 * @param conn
+	 * @param id
+	 * @return
+	 * @throws SQLException
+	 */
+	
+	public static String tenerNombreIDActual(Connection conn, int id) throws SQLException {
+
+		String nombre = null;
+		Statement s = (Statement) conn.createStatement();
+		ResultSet rs = s.executeQuery("select cif from fabricante where id = " + id);
+
+		while (rs.next()) {
+			nombre = rs.getString(1);
+
+
+		}
+
+		rs.close();
+		s.close();
+
+		return nombre;
+
+	}
+
 
 	/**
 	 * 

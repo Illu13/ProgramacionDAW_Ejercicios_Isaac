@@ -11,16 +11,18 @@ import com.mysql.cj.jdbc.result.UpdatableResultSet;
 import capitulo04.bloque04.Utils;
 
 public class LecturaBBDDConcesionario {
-	
+
 	/**
 	 * 
-	 * @param args
+	 * @param args1
 	 */
 
 	public static void main(String[] args) {
-		pruebaConsultaPorFicheroDePropiedades();
+		do {
+			pruebaConsultaPorFicheroDePropiedades();
+		} while (true);
 	}
-	
+
 	/**
 	 * 
 	 */
@@ -41,8 +43,6 @@ public class LecturaBBDDConcesionario {
 		int idCon;
 		int idCli;
 		float precioVenta;
-		
-		do {
 
 		try {
 
@@ -87,6 +87,16 @@ public class LecturaBBDDConcesionario {
 					cif = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca el cif");
 					nombre = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca el nombre");
 					localidad = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca la localidad");
+
+					if (cif.isEmpty()) {
+						cif = ControladorConcesionario.tenerCifIDActual(conn, id);
+					}
+					if (nombre.isEmpty()) {
+						nombre = ControladorConcesionario.tenerNombreIDActual(conn, id);
+					}
+					if (localidad.isEmpty()) {
+						nombre = ControladorConcesionario.tenerLocalidadIDActual(conn, id);
+					}
 					ControladorConcesionario.updateRegistro(conn, id, cif, nombre, localidad);
 					conn.close();
 					break;
@@ -125,6 +135,13 @@ public class LecturaBBDDConcesionario {
 					id = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Introduzca el id del fabricante");
 					cif = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca el cif");
 					nombre = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca el nombre");
+
+					if (cif.isEmpty()) {
+						cif = ControladorFabricante.tenerNombreIDActual(conn, id);
+					}
+					if (nombre.isEmpty()) {
+						nombre = ControladorFabricante.tenerMarcaIDActual(conn, id);
+					}
 					ControladorFabricante.updateRegistro(conn, id, cif, nombre);
 					conn.close();
 					break;
@@ -135,10 +152,9 @@ public class LecturaBBDDConcesionario {
 					break;
 				}
 				break;
-				
-				
+
 			case 3:
-				
+
 				int opcionCli = Utils.obtenerEnteroPorJOptionPaneConDescripcion("0.-Salir"
 						+ "\n1.-Ver todos los registros" + "\n2.-Insertar un registro" + "\n3.-Modificar un registro"
 						+ "\n4.-Eliminar un registro" + "\nIntroduzca una opción.");
@@ -157,20 +173,18 @@ public class LecturaBBDDConcesionario {
 					apellidos = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca los apellidos");
 					localidad = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca la localidad");
 					dni = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca el dni");
-					fechaNac = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca la "
-							+ "fecha en este formato yyyy-MM-dd");
+					fechaNac = Utils.obtenerStringPorJOptionPaneConDescripcion(
+							"Introduzca la " + "fecha en este formato yyyy-MM-dd");
 					confirmacion = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca si el "
 							+ "cliente está activo, si lo está pon 'S', si no, pon cualquier otra cosa");
 					if (confirmacion.equals("S")) {
 						activo = true;
-					}
-					else {
+					} else {
 						activo = false;
 					}
-					
+
 					ControladorCliente.realizaInsert(conn, nombre, apellidos, localidad, dni, fechaNac, activo);
 
-					
 					conn.close();
 					break;
 
@@ -180,16 +194,29 @@ public class LecturaBBDDConcesionario {
 					apellidos = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca los apellidos");
 					localidad = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca la localidad");
 					dni = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca el dni");
-					fechaNac = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca la "
-							+ "fecha en este formato yyyy-MM-dd");
+					fechaNac = Utils.obtenerStringPorJOptionPaneConDescripcion(
+							"Introduzca la " + "fecha en este formato yyyy-MM-dd");
 					confirmacion = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca si el "
 							+ "cliente está activo, si lo está pon 'S', si no, pon cualquier otra cosa");
 					if (confirmacion.equals("S")) {
 						activo = true;
-					}
-					else {
+					} else {
 						activo = false;
 					}
+
+					if (nombre.isEmpty()) {
+						nombre = ControladorCliente.tenerNombreIDActual(conn, id);
+					}
+					if (apellidos.isEmpty()) {
+						apellidos = ControladorCliente.tenerApellidosIDActual(conn, id);
+					}
+					if (localidad.isEmpty()) {
+						localidad = ControladorCliente.tenerLocalidadIDActual(conn, id);
+					}
+					if (dni.isEmpty()) {
+						dni = ControladorCliente.tenerDniIDActual(conn, id);
+					}
+
 					ControladorCliente.updateRegistro(conn, id, nombre, apellidos, localidad, dni, fechaNac, activo);
 					conn.close();
 					break;
@@ -200,15 +227,15 @@ public class LecturaBBDDConcesionario {
 					break;
 				}
 				break;
-				
+
 			case 4:
-				
+
 				int opcionCo = Utils.obtenerEnteroPorJOptionPaneConDescripcion("0.-Salir"
 						+ "\n1.-Ver todos los registros" + "\n2.-Insertar un registro" + "\n3.-Modificar un registro"
 						+ "\n4.-Eliminar un registro" + "\nIntroduzca una opción.");
 
 				switch (opcionCo) {
-				
+
 				case 1:
 					ControladorCoche.verRegistros(conn);
 					conn.close();
@@ -220,7 +247,7 @@ public class LecturaBBDDConcesionario {
 					nombre = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca el número de bastidor");
 					apellidos = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca el modelo");
 					localidad = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca el color");
-					
+
 					ControladorCoche.realizaInsert(conn, idFab, nombre, apellidos, localidad);
 					conn.close();
 					break;
@@ -232,7 +259,7 @@ public class LecturaBBDDConcesionario {
 					nombre = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca el número de bastidor");
 					apellidos = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca el modelo");
 					localidad = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca el color");
-					
+
 					ControladorCoche.updateRegistro(conn, id, idFab, nombre, apellidos, localidad);
 					conn.close();
 					break;
@@ -241,23 +268,22 @@ public class LecturaBBDDConcesionario {
 					ControladorCoche.realizaDelete(conn, id);
 					conn.close();
 					break;
-					
-				
+
 				}
-				
+
 			case 5:
 				int opcionVe = Utils.obtenerEnteroPorJOptionPaneConDescripcion("0.-Salir"
 						+ "\n1.-Ver todos los registros" + "\n2.-Insertar un registro" + "\n3.-Modificar un registro"
 						+ "\n4.-Eliminar un registro" + "\nIntroduzca una opción.");
 
 				switch (opcionVe) {
-				
+
 				case 1:
-					
+
 					ControladorVentas.verRegistros(conn);
-					
+
 				case 2:
-					
+
 					System.out.println("Registros cliente");
 					ControladorCliente.verRegistros(conn);
 					idCli = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Introduzca la id del cliente, "
@@ -270,10 +296,10 @@ public class LecturaBBDDConcesionario {
 					ControladorCoche.verRegistros(conn);
 					idCoc = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Introduzca la id del coche, "
 							+ "tiene que estar en la tabla que acaba de salir en consola");
-					fechaNac = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca la "
-							+ "fecha en este formato yyyy-MM-dd");
+					fechaNac = Utils.obtenerStringPorJOptionPaneConDescripcion(
+							"Introduzca la " + "fecha en este formato yyyy-MM-dd");
 					precioVenta = Utils.obtenerFloatPorJOptionPaneConDescripcion("Introduzca el precio de la venta");
-					
+
 					ControladorVentas.realizaInsert(conn, idCli, idCon, idCoc, fechaNac, precioVenta);
 					break;
 				case 3:
@@ -290,18 +316,17 @@ public class LecturaBBDDConcesionario {
 					ControladorCoche.verRegistros(conn);
 					idCoc = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Introduzca la id del coche, "
 							+ "tiene que estar en la tabla que acaba de salir en consola");
-					fechaNac = Utils.obtenerStringPorJOptionPaneConDescripcion("Introduzca la "
-							+ "fecha en este formato yyyy-MM-dd");
+					fechaNac = Utils.obtenerStringPorJOptionPaneConDescripcion(
+							"Introduzca la " + "fecha en este formato yyyy-MM-dd");
 					precioVenta = Utils.obtenerFloatPorJOptionPaneConDescripcion("Introduzca el precio de la venta");
-					
+
 					ControladorVentas.realizaUpdate(conn, id, idCli, idCon, idCoc, fechaNac, precioVenta);
 					break;
 				case 4:
 					id = Utils.obtenerEnteroPorJOptionPaneConDescripcion("Introduzca la id de la venta a eliminar");
 					ControladorVentas.realizaDelete(conn, id);
 				}
-				
-					
+
 				break;
 			}
 
@@ -310,7 +335,7 @@ public class LecturaBBDDConcesionario {
 		} catch (SQLException ex) {
 			System.out.println("Error en la ejecución SQL: " + ex.getMessage());
 		}
-		} while(true);
+
 	}
 
 	/*

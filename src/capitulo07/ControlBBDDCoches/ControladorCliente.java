@@ -135,6 +135,130 @@ public class ControladorCliente {
 	/**
 	 * 
 	 * @param conn
+	 * @param id
+	 * @return
+	 * @throws SQLException
+	 */
+	public static String tenerNombreIDActual(Connection conn, int id) throws SQLException {
+
+		String nombre = null;
+		Statement s = (Statement) conn.createStatement();
+		ResultSet rs = s.executeQuery("select nombre from cliente where id = " + id);
+
+		while (rs.next()) {
+			nombre = rs.getString(1);
+
+		}
+
+		rs.close();
+		s.close();
+
+		return nombre;
+
+	}
+	
+	/**
+	 * 
+	 * @param conn
+	 * @param id
+	 * @return
+	 * @throws SQLException
+	 */
+	
+	public static String tenerApellidosIDActual(Connection conn, int id) throws SQLException {
+
+		String nombre = null;
+		Statement s = (Statement) conn.createStatement();
+		ResultSet rs = s.executeQuery("select apellidos from cliente where id = " + id);
+
+		while (rs.next()) {
+			nombre = rs.getString(1);
+
+		}
+
+		rs.close();
+		s.close();
+
+		return nombre;
+
+	}
+	
+	/**
+	 * 
+	 * @param conn
+	 * @param id
+	 * @return
+	 * @throws SQLException
+	 */
+	
+	public static String tenerLocalidadIDActual(Connection conn, int id) throws SQLException {
+
+		String nombre = null;
+		Statement s = (Statement) conn.createStatement();
+		ResultSet rs = s.executeQuery("select localidad from cliente where id = " + id);
+
+		while (rs.next()) {
+			nombre = rs.getString(1);
+
+		}
+
+		rs.close();
+		s.close();
+
+		return nombre;
+
+	}
+	
+	/**
+	 * 
+	 * @param conn
+	 * @param id
+	 * @return
+	 * @throws SQLException
+	 */
+	
+	public static String tenerDniIDActual(Connection conn, int id) throws SQLException {
+
+		String nombre = null;
+		Statement s = (Statement) conn.createStatement();
+		ResultSet rs = s.executeQuery("select dni from cliente where id = " + id);
+
+		while (rs.next()) {
+			nombre = rs.getString(1);
+
+		}
+
+		rs.close();
+		s.close();
+
+		return nombre;
+
+	}
+	
+	public static Date tenerFechaNacIDActual(Connection conn, int id) throws SQLException {
+
+		String fecha = null;
+		java.sql.Date date = null;
+		Statement s = (Statement) conn.createStatement();
+		ResultSet rs = s.executeQuery("select fechaNac from cliente where id = " + id);
+
+		while (rs.next()) {
+			date = rs.getDate(1);
+
+		}
+
+		rs.close();
+		s.close();
+
+		return date;
+
+	}
+	
+
+	
+	/**
+	 * 
+	 * @param conn
 	 * @throws SQLException
 	 */
 
