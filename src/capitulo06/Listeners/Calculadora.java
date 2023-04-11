@@ -20,6 +20,12 @@ public class Calculadora {
 		listeners.remove(n);
 
 	}
+	
+	/**
+	 * 
+	 * @param divis
+	 * @param divid
+	 */
 
 	private static void procesarDividendo(float divis, float divid) {
 
@@ -35,6 +41,12 @@ public class Calculadora {
 		}
 
 	}
+	/**
+	 * 
+	 * @param sum1
+	 * @param sum2
+	 * @param resultado
+	 */
 
 	private static void procesarSuma(float sum1, float sum2, float resultado) {
 		
@@ -51,6 +63,12 @@ public class Calculadora {
 		}
 
 	}
+	/**
+	 * 
+	 * @param rest1
+	 * @param rest2
+	 * @param resultado
+	 */
 	
 	private static void procesarResta(float rest1, float rest2, float resultado) {
 		
@@ -69,6 +87,11 @@ public class Calculadora {
 		
 	}
 	
+	/**
+	 * 
+	 * @param num1
+	 */
+	
 
 	private static void procesarRaiz(float num1) {
 		
@@ -85,6 +108,11 @@ public class Calculadora {
 		
 
 	}
+	
+	/**
+	 * 
+	 * @param e
+	 */
 
 	private static void fireResultadoRaiz(NumeroEvent e) {
 		for (NumeroListener n : listeners) {
@@ -92,12 +120,21 @@ public class Calculadora {
 		}	
 		
 	}
+	/**
+	 * 
+	 * @param e
+	 */
 
 	private static void fireResultadoResta(NumeroEvent e) {
 		for (NumeroListener n : listeners) {
 			n.resultadoResta(e);
 		}		
 	}
+	
+	/**
+	 * 
+	 * @param e
+	 */
 
 	private static void fireResultadoSuma(NumeroEvent e) {
 		for (NumeroListener n : listeners) {
@@ -105,6 +142,11 @@ public class Calculadora {
 		}
 
 	}
+	
+	/**
+	 * 
+	 * @param e
+	 */
 
 	private static void fireDivisionImposible(NumeroEvent e) {
 
