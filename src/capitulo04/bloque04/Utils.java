@@ -73,13 +73,12 @@ public class Utils {
 		int numEntero = Integer.parseInt(str);
 		return numEntero;
 	}
-	
+
 	public static String obtenerStringPorJOptionPaneConDescripcion(String desc) {
 		String str = JOptionPane.showInputDialog(desc);
 		return str;
 	}
-	
-	
+
 	public static float obtenerFloatPorJOptionPaneConDescripcion(String desc) {
 		String str = JOptionPane.showInputDialog(desc);
 		float num = Float.parseFloat(str);
@@ -87,12 +86,12 @@ public class Utils {
 	}
 
 	public static int obtenerEnteroPorJOptionPaneEntreLimitesYDescripcion(int min, int max, String desc) {
-		
+
 		int numEntero;
 		do {
 			numEntero = Utils.obtenerEnteroPorJOptionPaneConDescripcion(desc);
 		} while (numEntero <= min || numEntero >= max);
-		
+
 		return numEntero;
 
 	}
@@ -110,9 +109,9 @@ public class Utils {
 	public static int obtenerEntero() {
 		return obtenerEnteroPorScanner();
 	}
-	
+
 	public static Date parseoFecha(String fechaSinParseo) {
-		
+
 		SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
 
 		String fecha = fechaSinParseo;
@@ -125,9 +124,27 @@ public class Utils {
 			System.out.println("Error en el parseo de la fecha");
 			e.printStackTrace();
 		}
-		
+
 		return fechaParseada;
-		
-		
+
+	}
+
+	public static Date parseoFechaEspañol(String fechaSinParseo) {
+
+		SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+
+		String fecha = fechaSinParseo;
+
+		Date fechaParseada = null;
+
+		try {
+			fechaParseada = formatoFecha.parse(fecha);
+		} catch (ParseException e) {
+			System.out.println("Error en el parseo de la fecha");
+			e.printStackTrace();
+		}
+
+		return fechaParseada;
+
 	}
 }
