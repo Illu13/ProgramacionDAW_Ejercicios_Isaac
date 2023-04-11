@@ -28,7 +28,7 @@ public class NumWatcher implements NumeroListener {
 	public void divisionImposible(NumeroEvent n) {
 		
 		System.out.println("Usted ha intentado dividir " + n.getNumero1() + " entre "
-				+ n.getNumero2() + ", lo cual es imposible.");
+				+ n.getNumero2() + ", lo cual no es posible.");
 		
 	}
 
